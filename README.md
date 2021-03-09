@@ -7,7 +7,6 @@ Python app that uses speech recognition and text-to-speech This app initially us
 Dependencies
 #### pip install speechrecognition
 #### pip install pyttsx3
-#### pip install pyaudio
 #### pip install gTTS
 #### pip install playsound
 #### pip install PyObjC
