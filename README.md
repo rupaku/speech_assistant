@@ -16,3 +16,6 @@ Dependencies
 
 download whl file according to python version and windows version. Go to downloaded path, open shell and run 
 pip install pyAu and press tab  ....
+
+TO run this script:
+python main.py
