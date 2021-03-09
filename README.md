@@ -10,6 +10,7 @@ Dependencies
 #### pip install gTTS
 #### pip install playsound
 #### pip install PyObjC
+#### pip install yfinance
 #### pip install PyAudio
 (If there is a issue in installing PyAudio use .whl file from this link https://www.lfd.uci.edu/~gohlke/pythonlibs/#pyaudio)
 
