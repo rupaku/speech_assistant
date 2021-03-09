@@ -12,17 +12,28 @@ import os # to remove created audio files
 
 class person:
     name = ''
-    def setName(self, name):
-        self.name = name
+
+def setName(self, name):
+    self.name = name
 
 def there_exists(terms):
     for term in terms:
         if term in voice_data:
             return True
-
 r = sr.Recognizer() # initialise a recogniser
+def speak(audio_string):
+    tts = gTTS(text=audio_string, lang='en') # text to speech(voice)
+    r = random.randint(1,20000000)
+    audio_file = 'audio' + str(r) + '.mp3'
+    tts.save(audio_file) # save as mp3
+    playsound.playsound(audio_file) # play the audio file
+    print(f"kiri: {audio_string}") # print what app said
+    os.remove(audio_file) # remove audio file
+     
 # listen for audio and convert it to text:
 def record_audio(ask=False):
+    
+    # get string and make a audio file to be played
     with sr.Microphone() as source: # microphone as source
         if ask:
             speak(ask)
@@ -36,16 +47,6 @@ def record_audio(ask=False):
             speak('Sorry, the service is down') # error: recognizer is not connected
         print(f">> {voice_data.lower()}") # print what user said
         return voice_data.lower()
-
-# get string and make a audio file to be played
-def speak(audio_string):
-    tts = gTTS(text=audio_string, lang='en') # text to speech(voice)
-    r = random.randint(1,20000000)
-    audio_file = 'audio' + str(r) + '.mp3'
-    tts.save(audio_file) # save as mp3
-    playsound.playsound(audio_file) # play the audio file
-    print(f"kiri: {audio_string}") # print what app said
-    os.remove(audio_file) # remove audio file
 
 def respond(voice_data):
     # 1: greeting
@@ -119,7 +120,7 @@ def respond(voice_data):
 
 
 time.sleep(1)
-
+# speak('How can i help you?')
 person_obj = person()
 while(1):
     voice_data = record_audio() # get the voice input
